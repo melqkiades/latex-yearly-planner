@@ -12,6 +12,7 @@
 \newcommand{\myNumDotWidthFull}{ {{- $numbers.DotWidthFull -}} }
 \newcommand{\myNumDotWidthTwoThirds}{ {{- $numbers.DotWidthTwoThirds -}} }
 \newcommand{\myNumWeeklyLines}{ {{- $numbers.WeeklyLines -}} }
+\newcommand{\myNumDailyMostImportant}{ {{- $numbers.DailyMostImportant -}} }
 \newcommand{\myNumDailyTodos}{ {{- $numbers.DailyTodos -}} }
 \newcommand{\myNumDailyNotes}{ {{- $numbers.DailyNotes -}} }
 \newcommand{\myNumDailyBottomHour}{ {{- $numbers.DailyBottomHour -}} }
