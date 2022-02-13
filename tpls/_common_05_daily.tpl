@@ -10,10 +10,14 @@
 \end{minipage}%
 \hspace{\myLenTriColSep}%
 \begin{minipage}[t]{\dimexpr2\myLenTriCol+\myLenTriColSep}
-  \myUnderline{Top priorities\myDummyQ}
+  \myUnderline{Most important\myDummyQ}
+  \Repeat{\myNumDailyMostImportant}{\myTodoLineGray}
+  \vskip\dimexpr5.4mm
+  \myUnderline{To do\myDummyQ}
   \Repeat{\myNumDailyTodos}{\myTodoLineGray}
   \vskip\dimexpr5.4mm
-  \myUnderline{Notes $\vert$ {{ $today.LinkLeaf "More" "More" }}\hfill{}{{ $today.LinkLeaf "Reflect" "Reflect" }}\hfill{}\hyperlink{Notes Index}{All notes}}
+  % \myUnderline{Notes $\vert$ {{ $today.LinkLeaf "More" "More" }}\hfill{}{{ $today.LinkLeaf "Reflect" "Reflect" }}\hfill{}\hyperlink{Notes Index}{All notes}}
+  \myUnderline{Notes}
   \myMash[\myDailySpring]{\myNumDailyNotes}{\myNumDotWidthTwoThirds}
 \end{minipage}
 \par\pagebreak
