@@ -74,6 +74,7 @@ type Numbers struct {
 	QuarterlyLines      int
 	WeeklyLines         int
 	DailyTodos          int
+	DailyMostImportant  int
 	DailyNotes          int
 	DailyPersonal       int
 	DailyBottomHour     int
