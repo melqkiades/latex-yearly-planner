@@ -1,7 +1,12 @@
 calafterschedule: true
 addlasthalfhour: true
+ampmtime: true
+dotted: false
 
 layout:
   numbers:
     dailybottomhour: 7
     dailytophour: 18
+    dailymostimportant: 3
+    dailytodos: 5
+    dailynotes: 23

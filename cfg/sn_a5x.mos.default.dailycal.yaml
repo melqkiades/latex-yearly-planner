@@ -1,7 +1,9 @@
 calafterschedule: true
 addlasthalfhour: true
+ampmtime: true
+dotted: false
 
 layout:
   numbers:
-    dailybottomhour: 9
-    dailytophour: 20
+    dailybottomhour: 7
+    dailytophour: 18
