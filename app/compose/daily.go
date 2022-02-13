@@ -14,10 +14,37 @@ func DailyStuff(prefix, leaf string) func(cfg config.Config, tpls []string) (pag
 	return func(cfg config.Config, tpls []string) (page.Modules, error) {
 		year := cal.NewYear(cfg.WeekStart, cfg.Year)
 		modules := make(page.Modules, 0, 366)
+		firstWeek := true
 
 		for _, quarter := range year.Quarters {
 			for _, month := range quarter.Months {
 				for _, week := range month.Weeks {
+
+					// if !week.PrevExists() && !firstWeek {
+					// 	continue;
+					// }
+					
+
+					if week.PrevExists() || firstWeek {
+
+						modules = append(modules, page.Module{
+							Cfg: cfg,
+							Tpl: tpls[1],
+							Body: map[string]interface{}{
+								"Year":         year,
+								"Week":         week,
+								"Breadcrumb":   week.Breadcrumb(),
+								"HeadingMOS":   week.HeadingMOS(),
+								// "SideQuarters": year.SideQuarters(week.Quarters.Numbers()...),
+								// "SideMonths":   year.SideMonths(week.Months.Months()...),
+								"Extra":        week.PrevNext().WithTopRightCorner(cfg.ClearTopRightCorner),
+								"Extra2":       extra2(cfg.ClearTopRightCorner, false, false, nil, 0),
+							},
+						})
+					}
+
+					firstWeek = false
+
 					for _, day := range week.Days {
 						if day.Time.IsZero() {
 							continue
