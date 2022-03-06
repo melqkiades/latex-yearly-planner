@@ -279,17 +279,17 @@ func (w *Week) rightYear() int {
 func (w *Week) HeadingMOS() string {
 	var contents []string
 
-	if w.PrevExists() {
-		leftNavBox := tex.ResizeBoxW(`\myLenHeaderResizeBox`, `$\langle$`)
-		contents = append(contents, tex.Hyperlink(w.Prev().ref(), leftNavBox))
-	}
+	// if w.PrevExists() {
+	// 	leftNavBox := tex.ResizeBoxW(`\myLenHeaderResizeBox`, `$\langle$`)
+	// 	contents = append(contents, tex.Hyperlink(w.Prev().ref(), leftNavBox))
+	// }
 
 	contents = append(contents, tex.ResizeBoxW(`\myLenHeaderResizeBox`, w.Target()))
 
-	if w.NextExists() {
-		rightNavBox := tex.ResizeBoxW(`\myLenHeaderResizeBox`, `$\rangle$`)
-		contents = append(contents, tex.Hyperlink(w.Next().ref(), rightNavBox))
-	}
+	// if w.NextExists() {
+	// 	rightNavBox := tex.ResizeBoxW(`\myLenHeaderResizeBox`, `$\rangle$`)
+	// 	contents = append(contents, tex.Hyperlink(w.Next().ref(), rightNavBox))
+	// }
 
 	return tex.Tabular("@{}"+strings.Repeat("l", len(contents)), strings.Join(contents, ` & `))
 }
